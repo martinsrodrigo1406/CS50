@@ -1,0 +1,26 @@
+{
+    "ace": {
+        "@keyboardmode": "default",
+        "@showGutter": true,
+        "custom-types": {
+            "json()": {
+                "settings": "javascript"
+            }
+        }
+    },
+    "collab": {
+        "@timeslider-visible": false
+    },
+    "debug": {
+        "@pause": 0
+    },
+    "openfiles": {
+        "@show": false
+    },
+    "projecttree": {
+        "@showhidden": false
+    },
+    "tabs": {
+        "@show": true
+    }
+}

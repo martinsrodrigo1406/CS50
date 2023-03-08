@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    C$50 Finance: Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-start">Name</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">TOTAL</th>
+            </tr>
+        </thead>
+       <tbody>
+           {% for portf in userportfolio %}
+                <tr>
+                    <td class="text-start">{{ portf.symbol }}</td>
+                    <td class="text-start">{{ portf.name }}</td>
+                    <td class="text-end">{{ portf.amount }}</td>
+                    <td class="text-end">{{ portf.price | usd }}</td>
+                    <td class="text-end">{{ portf.eachsharetotal | usd }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
+                <td class="border-0 text-end">{{ cashnow | usd }}</td>
+            </tr>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
+                <td class="border-0 w-bold text-end">{{ (cashnow + total) | usd }}</td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}

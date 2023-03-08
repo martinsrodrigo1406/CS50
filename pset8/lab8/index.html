@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+        document.addEventListener('click', (e) => {
+            let element = e.target;
+            let buttons = document.getElementsByTagName("BUTTON");
+            let numberButtons = buttons.length;
+            let text = document.getElementById('fname').value;
+            if(element.id == "bytesAnswer"){
+                if(text == "8")
+                {
+                    document.getElementById('question2').textContent = 'Correct!';
+                    document.querySelector('#fname').style.backgroundColor = "Green";
+                }
+                else
+                {
+                    document.getElementById('question2').textContent = 'Incorrect!';
+                    document.querySelector('#fname').style.backgroundColor = "Red";
+                }
+            }
+            if(element.tagName == "BUTTON"){
+                if(element.id == "24")
+                {
+                    for(let i = 0; i < numberButtons; i++)
+                    {
+                        buttons[i].style.backgroundColor = "#d9edff";
+                    }
+                    document.getElementById('question1').textContent = 'Correct!';
+                    element.style.backgroundColor = "Green";
+                }
+                else
+                {
+                    for(let i = 0; i < numberButtons; i++)
+                    {
+                        buttons[i].style.backgroundColor = "#d9edff";
+                    }
+                    document.getElementById('question1').textContent = 'Incorrect!';
+                    element.style.backgroundColor = "Red";
+                }
+    }
+});
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <h3>Um pixel é formando por quantos bits?</h3>
+                <span id="question1">Confira a resposta aqui</span>
+                <ul>
+                    <li>24 -><button id="24" type="button" >Go</button></li>
+                    <li>32 -><button id="32" type="button" >Go</button></li>
+                    <li>8 -><button id="8" type="button" >Go</button></li>
+                </ul>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                 <h3>Quantos bits formam 1 byte?</h3>
+                <span id="question2">Confira a resposta aqui</span>
+                <p>
+                <label for="fname">Type your answer: </label>
+                <input type="text" id="fname" name="fname"><br><br>
+                <input type="submit" value="Submit" id="bytesAnswer">
+                </p>
+                <!-- TODO: Add free response question here -->
+
+            </div>
+
+        </div>
+    </body>
+</html>

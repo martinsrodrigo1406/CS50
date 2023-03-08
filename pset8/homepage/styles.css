@@ -1,0 +1,42 @@
+header {
+    color: white;
+    font-size: large;
+    text-align: center;
+    border: double;
+    font-stretch: expanded;
+    background-color: black;
+}
+
+main {
+    color: green;
+    font-size: medium;
+    text-align: center;
+    border: double;
+    font-stretch: semi-expanded;
+}
+
+footer {
+     color: blue;
+     font-size: small;
+     text-align: center;
+     border: double;
+     font-stretch: semi-expanded;
+}
+
+.card {
+    color: blue;
+    width: 18rem;
+    background-color: white;
+    position: relative;
+    left: 530px;
+}
+
+a:hover {
+   color: white;
+   font-size: 110%;
+   text-transform: uppercase;
+   transition: all 1s ease-out;
+   background-color: blue;
+}
+
+

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    C$50 Finance: Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in history %}
+                <tr>
+                    <td class="text-start">{{ row.symbol }}</td>
+                    {% if row.nature == "sell" %}
+                        <td class="text-end">{{ (row.amount * -1) }}</td>
+                    {% else %}
+                        <td class="text-end">{{ row.amount }}</td>
+                    {% endif %}
+                    <td class="text-end">{{ row.price | usd }}</td>
+                    <td class="text-end">{{ row.date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
